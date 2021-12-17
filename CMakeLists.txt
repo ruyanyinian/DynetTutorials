@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.10)
+project(DynetTorial)
+set(CMAKE_CXX_STANDARD 11)
+add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
+target_include_directories(${PROJECT_NAME} PRIVATE "~/codes/dynet")
+target_link_libraries(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/lib/libdynet.so)
+# set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake) 
+# if (DEFINED ENV{EIGEN3_INCLUDE_DIR} AND NOT DEFINED EIGEN3_INCLUDE_DIR) # use env variable if not set, 这里我们就在命令行使用cmake .. -DEIGEN3_INCLUDE_DIR=/home/qinyu/third_party/eigen 
+#   set(EIGEN3_INCLUDE_DIR $ENV{EIGEN3_INCLUDE_DIR})
+# endif()
+# get_filename_component(EIGEN3_INCLUDE_DIR "${EIGEN3_INCLUDE_DIR}" REALPATH BASE_DIR "${CMAKE_BINARY_DIR}")
+# set(EIGEN3_INCLUDE_DIR ${EIGEN3_INCLUDE_DIR} CACHE STRING "" FORCE)
+# message("-- Eigen dir is " ${EIGEN3_INCLUDE_DIR})
+# find_package(Eigen3 REQUIRED)
+# include_directories(${EIGEN3_INCLUDE_DIR})sasdfas 
